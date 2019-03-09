@@ -1,0 +1,29 @@
+{
+  "name": "FriendFinder",
+  "version": "1.0.0",
+  "description": "HW - 11 - Friend Finder",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sthmpsn/FriendFinder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sthmpsn/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/sthmpsn/FriendFinder#readme"
+}
