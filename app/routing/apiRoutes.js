@@ -14,6 +14,7 @@ module.exports = function(app) {
     // Below code handles when users "visit" a page.
     // ---------------------------------------------------------------------------
     app.get("/api/friends", function(req, res) {
+        getFriends();       //How to get this to execute after SQL is inserted to Table???
         res.json(friendsArr);
     });
 

@@ -46,7 +46,7 @@ function getFriends(){
 }
 
 
-getFriends();
+getFriends();   // initialize the friendsArr with mySql items
 
 // Export the friends array containing the DB data to be used in the api Routes
 module.exports.connection = connection;
