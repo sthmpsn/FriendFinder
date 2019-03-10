@@ -1,58 +1,9 @@
-//Test data.  Will want to have this data pulled from MySql database.
-// var friends = [
-//     {
-//         name: "Jerry",
-//         photo: "https://studybreaks.com/wp-content/uploads/2018/12/sb1.jpg",
-//         scores: [
-//             "5",
-//             "1",
-//             "4",
-//             "5",
-//             "1",
-//             "4",
-//             "5",
-//             "1",
-//             "4",
-//             "3"
-//         ]
-//     },
-//     {
-//         name: "Rick",
-//         photo: "https://studybreaks.com/wp-content/uploads/2018/12/sb1.jpg",
-//         scores: [
-//             "5",
-//             "1",
-//             "4",
-//             "5",
-//             "1",
-//             "4",
-//             "5",
-//             "1",
-//             "4",
-//             "3"
-//         ]
-//     },
-//     {
-//         name: "Morty",
-//         photo: "https://studybreaks.com/wp-content/uploads/2018/12/sb1.jpg",
-//         scores: [
-//             "5",
-//             "1",
-//             "4",
-//             "5",
-//             "1",
-//             "4",
-//             "5",
-//             "1",
-//             "4",
-//             "3"
-//         ]
-//     },
-// ]
-
 require("dotenv").config();     
-const keys = require("../../keys.js");
+const keys = require("../../keys");
 const mysql = require("mysql");
+
+// Store all the User data from MySQL
+var friends = [];
 
 var connection = mysql.createConnection({
     host: "localhost",
@@ -64,12 +15,32 @@ var connection = mysql.createConnection({
 
 connection.connect(function(err) {
     if(err) throw err;
-    console.log("connected as id " + connection.threadId);
+    console.log("db connected as id " + connection.threadId);
+});
+
+connection.query("SELECT * FROM friends", function(err, result){
+    for (var i=0; i < result.length; i++){
+        friends.push(
+            {
+                name: result[i].name,
+                photo: result[i].photo,
+                scores: [
+                    result[i].q1,
+                    result[i].q2,
+                    result[i].q3,
+                    result[i].q4,
+                    result[i].q5,
+                    result[i].q6,
+                    result[i].q7,
+                    result[i].q8,
+                    result[i].q9,
+                    result[i].q10,
+                ]
+            }
+        )
+    }
 });
 
 
-
-
-
-// Export the friends DB to be used in the api Routes
-// module.exports = friends;
+// Export the friends array containing the DB data to be used in the api Routes
+module.exports = friends;
