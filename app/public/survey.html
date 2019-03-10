@@ -1,17 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <title>Survey</title>
 </head>
+
 <body>
-
-    <h1>Survey Page</h1>
-
-
-
-
+    <div class="container container-fluid">
+        <div id="row-header" class="row">
+            <div class="col jumbotron h1 text-center bg-dark text-white">
+                <p>Survey</p>
+                <h2><i class="fab fa-wpforms"></i></h2>
+            </div>
+        </div>
+        <div id="row-form" class="row mb-0 mb-md-3">
+            <div id="col-form" class="col px-0">
+                <form>
+                    <div class="card border-0">
+                        <div class="card-header bg-info h5 text-white text-center">
+                            About You
+                        </div>
+                        <div class="card-body border mb-2 bg-light">
+                            <div class="form-group">
+                                <label for="name">Name (Required)</label>
+                                <input type="text" class="form-control w-25" id="name">
+                            </div>
+                            <div class="form-group">
+                                <label for="photo">Link to Photo Image (Required)</label>
+                                <input type="text" class="form-control w-75" id="photo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0">
+                        <div class="card-header bg-info h5 text-white text-center w-25">
+                            Question 1
+                        </div>
+                        <div class="card-body border mb-2 bg-light">
+                            <div class="form-group">
+                                <label for="q1">Your mind is always buzzing with unexplored ideas and plans.</label>
+                                <select class="form-control w-25" id="q1">
+                                    <option value="" disabled selected>Select an Option</option>
+                                    <option value="1">1 - Strongly Disagree</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 - Strongly Agree</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0">
+                        <div class="card-header bg-info h5 text-white text-center w-25">
+                            Question 2
+                        </div>
+                        <div class="card-body border mb-2 bg-light">
+                            <div class="form-group">
+                                <label for="q2">Generally speaking, you rely more on your experience than your
+                                    imagination.</label>
+                                <select class="form-control w-25" id="q2">
+                                    <option value="" disabled selected>Select an Option</option>
+                                    <option value="1">1 - Strongly Disagree</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 - Strongly Agree</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0">
+                        <div class="card-header bg-info h5 text-white text-center w-25">
+                            Question 3
+                        </div>
+                        <div class="card-body border mb-2 bg-light">
+                            <div class="form-group">
+                                <label for="q3">You find it easy to stay relaxed and focused even when there is some
+                                    pressure.</label>
+                                <select class="form-control w-25" id="q3">
+                                    <option value="" disabled selected>Select an Option</option>
+                                    <option value="1">1 - Strongly Disagree</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 - Strongly Agree</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0">
+                        <div class="card-header bg-info h5 text-white text-center w-25">
+                            Question 4
+                        </div>
+                        <div class="card-body border mb-2 bg-light">
+                            <div class="form-group">
+                                <label for="q4">You rarely do something just out of sheer curiosity.</label>
+                                <select class="form-control w-25" id="q4">
+                                    <option value="" disabled selected>Select an Option</option>
+                                    <option value="1">1 - Strongly Disagree</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 - Strongly Agree</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0">
+                        <div class="card-header bg-info h5 text-white text-center w-25">
+                            Question 5
+                        </div>
+                        <div class="card-body border mb-2 bg-light">
+                            <div class="form-group">
+                                <label for="q5">People can rarely upset you.</label>
+                                <select class="form-control w-25" id="q5">
+                                    <option value="" disabled selected>Select an Option</option>
+                                    <option value="1">1 - Strongly Disagree</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 - Strongly Agree</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0">
+                        <div class="card-header bg-info h5 text-white text-center w-25">
+                            Question 6
+                        </div>
+                        <div class="card-body border mb-2 bg-light">
+                            <div class="form-group">
+                                <label for="q6">It is often difficult for you to relate to other people’s
+                                    feelings.</label>
+                                <select class="form-control w-25" id="q6">
+                                    <option value="" disabled selected>Select an Option</option>
+                                    <option value="1">1 - Strongly Disagree</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 - Strongly Agree</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0">
+                        <div class="card-header bg-info h5 text-white text-center w-25">
+                            Question 7
+                        </div>
+                        <div class="card-body border mb-2 bg-light">
+                            <div class="form-group">
+                                <label for="q7">In a discussion, truth should be more important than people’s
+                                    sensitivities.</label>
+                                <select class="form-control w-25" id="q7">
+                                    <option value="" disabled selected>Select an Option</option>
+                                    <option value="1">1 - Strongly Disagree</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 - Strongly Agree</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0">
+                        <div class="card-header bg-info h5 text-white text-center w-25">
+                            Question 8
+                        </div>
+                        <div class="card-body border mb-2 bg-light">
+                            <div class="form-group">
+                                <label for="q8">You rarely get carried away by fantasies and ideas.</label>
+                                <select class="form-control w-25" id="q8">
+                                    <option value="" disabled selected>Select an Option</option>
+                                    <option value="1">1 - Strongly Disagree</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 - Strongly Agree</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0">
+                        <div class="card-header bg-info h5 text-white text-center w-25">
+                            Question 9
+                        </div>
+                        <div class="card-body border mb-2 bg-light">
+                            <div class="form-group">
+                                <label for="q9">You think that everyone’s views should be respected regardless of
+                                    whether they are supported by facts or not.</label>
+                                <select class="form-control w-25" id="q9">
+                                    <option value="" disabled selected>Select an Option</option>
+                                    <option value="1">1 - Strongly Disagree</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 - Strongly Agree</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card border-0">
+                        <div class="card-header bg-info h5 text-white text-center w-25">
+                            Question 10
+                        </div>
+                        <div class="card-body border mb-2 bg-light">
+                            <div class="form-group">
+                                <label for="q10">You feel more energetic after spending time with a group of
+                                    people.</label>
+                                <select class="form-control w-25" id="q10">
+                                    <option value="" disabled selected>Select an Option</option>
+                                    <option value="1">1 - Strongly Disagree</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 - Strongly Agree</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="frmSubmit" type="submit" class="btn btn-primary w-100">
+                        <h3>Submit</h3>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
