@@ -24,8 +24,6 @@ module.exports = function(app) {
         // req.body hosts is equal to the JSON post sent from the user
         // This works because of our body parsing middleware (app.use in server.js)
         var newFriend = req.body;
-        // friendsArr.push(newFriend);
-        
 
         connection.query("INSERT INTO friends SET ?", newFriend, (err, res) => {
             if (err) throw err;
