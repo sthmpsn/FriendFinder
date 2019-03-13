@@ -6,15 +6,21 @@ const mysql = require("mysql");
 var friendsArr = [];
 
 // ===============================================================================
-// MySql Database Connection
+// MySql Database Connection - Verify if Heroku JawsDB first
 // ===============================================================================
-var connection = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-    user: keys.dbCreds.id,
-    password: keys.dbCreds.secret,
-    database: "friendfinder_db"
-});
+var connection;
+
+if (process.env.JAWSDB_URL){
+    connection = mysql.createConnection(process.env.JAWSDB_URL);
+}else{
+    connection = mysql.createConnection({
+        host: "localhost",
+        port: 3306,
+        user: keys.dbCreds.id,
+        password: keys.dbCreds.secret,
+        database: "friendfinder_db"
+    });
+};
 
 connection.connect(function(err) {
     if(err) throw err;
