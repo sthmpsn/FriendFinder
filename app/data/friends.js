@@ -48,12 +48,12 @@ var getFriends = function (){
                 }
             )
         }
-        console.log("Friends in our DB\n",friendsArr);   // will log out the friendsArr AFTER the query loads the data
+        // console.log("Friends in our DB\n",friendsArr);   // will log out the friendsArr AFTER the query loads the data
     });
 }
 
 getFriends();   // initialize the friendsArr with mySql items
-
+ 
 
 
 // Export the friends array containing the DB data to be used in the api Routes
@@ -62,3 +62,4 @@ getFriends();   // initialize the friendsArr with mySql items
 module.exports.connection = connection;
 module.exports.friendsArr = friendsArr;
 module.exports.getFriends = getFriends;
+

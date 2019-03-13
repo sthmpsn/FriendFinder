@@ -19,8 +19,8 @@ app.use(express.json());
 // ROUTER
 // ================================================================================
 
-require("./app/routing/apiRoutes")(app);     // uses a file called "apiRoutes.js" located in the <root>/routes folder. Contains API routes
 require("./app/routing/htmlRoutes")(app);    // uses a file called "apiRoutes.js" located in the <root>/routes folder. Contains HTML routes
+require("./app/routing/apiRoutes")(app);     // uses a file called "apiRoutes.js" located in the <root>/routes folder. Contains API routes
 
 // =============================================================================
 // LISTENER
