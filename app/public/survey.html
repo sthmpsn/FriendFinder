@@ -16,16 +16,15 @@
 <body>
     <div class="container container-fluid">
         <div id="row-header" class="row">
-            <div class="col-12 jumbotron h1 text-center bg-dark text-white py-3 mb-0">
+            <div class="col-12 jumbotron h1 text-center bg-dark text-white py-3 mb-3">
                 <p>Survey<i class="fab fa-wpforms h1 ml-4"></i></p>
-                
-            </div>
-            <div class="col-12 text-center text-white bg-dark pb-2 mb-2">
-                <a href="/">
-                    <button type="button" class="btn btn-light">
-                        <i class="fas fa-home h2"></i>
-                    </button>
-                </a>
+                <div class="col-12 text-center text-white bg-dark ">
+                    <a href="/">
+                        <button type="button" class="btn btn-light">
+                            <i class="fas fa-home h2"></i>
+                        </button>
+                    </a>
+                </div>
             </div>
         </div>
         
@@ -240,23 +239,29 @@
             </div>
         </div>
         <!-- Display Modal with BFF data Here [PLACE-HOLDER]-->
-        <div id="loginModal" class="modal" tabindex="-1" role="dialog">
-            <div class="modal-dialog" role="document">
+        <div id="bffModal" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" style="min-width: 667px;" role="document">
                 <div class="modal-content">
-                <div class="modal-header card-header text-white">
-                    <h5 class="modal-title">New BFF</h5>
+                <div class="modal-header card-header text-white bg-info">
+                    <h5 class="modal-title col-12 text-center">Meet your new Best Friend!!!</h5>
                 </div>
-                <div class="modal-body">
-                    <p>Meet your new Best Friend!!!</p>
+                <div class="modal-body text-center">
+                    <p id="bffName" class="text-center h1"></p>
+                    <img id="bffPhoto" style="max-width: 633px;max-height: 356px;"/>
                 </div>
                 <div class="modal-footer">
-                    <button id="loginModalClose" type="button" class="btn btn-secondary">Close</button>
+                    <button id="bffModalClose" type="button" class="btn btn-info">Close</button>
                 </div>
                 </div>
             </div>
         </div>
         <!-- END MODAL -->
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
 </body>
 
@@ -265,7 +270,7 @@
 <script type="text/javascript">
     console.log("JS Loaded");
 
-    $("#frmSubmit").on("click", function(event) {
+    $(document).on("click", "#frmSubmit", function(event) {
         console.log("Clicked SUBMIT");
         event.preventDefault();
 
@@ -293,7 +298,10 @@
         $.post("/api/friends", newFriend, function(data){
             console.log("Returned from POST: \n");
             console.log(data);
-           
+            $("#bffModal").show();
+            $("#bffName").append(data.name);
+            $("#bffPhoto").attr("src", data.photo);
+
             //clear the survey values when submitting
             $("#name").val("");
             $("#photo").val("");
@@ -309,6 +317,16 @@
             $("#q10").val(""); 
         });
 
+       
     });
+
+    $(document).on("click", "#bffModalClose", function () {
+        $("#bffModal").hide();
+        $("#bffName").text("");
+        $("#bffPhoto").removeAttr("src");
+    });
+
+
+
 
 </script>

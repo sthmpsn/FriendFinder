@@ -1,8 +1,7 @@
 // Dependencies
 var express = require("express");
 require("dotenv").config();     
-const keys = require("./keys");
-const mysql = require("mysql");
+
 
 // Set the port of our application
 // process.env.PORT lets the port be set by Heroku

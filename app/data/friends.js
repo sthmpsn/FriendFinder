@@ -1,7 +1,6 @@
 require("dotenv").config();     
 const keys = require("../../keys");
 const mysql = require("mysql");
-const $ = require("jquery");
 
 // Store all the friends as objects from MySQL
 var friendsArr = [];
@@ -28,6 +27,7 @@ connection.connect(function(err) {
 var getFriends = function (){
     friendsArr = [];   // Clear the friendsArr to ensure only "fresh" data from DB is loaded
     connection.query("SELECT * FROM friends", function(err, result){
+        if(err) throw(err);
         for (var i=0; i < result.length; i++){
             friendsArr.push(
                 {
@@ -48,12 +48,10 @@ var getFriends = function (){
                 }
             )
         }
-        // console.log("Friends in our DB\n",friendsArr);   // will log out the friendsArr AFTER the query loads the data
     });
 }
 
 getFriends();   // initialize the friendsArr with mySql items
- 
 
 
 // Export the friends array containing the DB data to be used in the api Routes
