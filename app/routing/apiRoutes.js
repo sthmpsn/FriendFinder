@@ -71,15 +71,15 @@ function findBff(newFriend){
 module.exports = function(app) {
 
     // Use as a "middleware to refresh the Friends array after every "API" call
-    var refreshFriends = function(req, res, next){
-        getFriends();
-        next();
-    }
+    // var refreshFriends = function(req, res, next){
+    //     getFriends();
+    //     next();
+    // }
 
     // API GET Requests  (The "READ" part of CRUD)
     // Below code handles when users "visit" a page.
     // ---------------------------------------------------------------------------
-    app.use("/api/*",refreshFriends);
+    // app.use("/api/*",refreshFriends);
 
 
     app.get("/api/friends", function(req, res) {
