@@ -18,7 +18,7 @@ if (process.env.JAWSDB_URL){
         port: 3306,
         user: keys.dbCreds.id,
         password: keys.dbCreds.secret,
-        database: "friendfinder_db"
+        database: "y0fr833g2h1g1pcn"
     });
 };
 

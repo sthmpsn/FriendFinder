@@ -1,13 +1,13 @@
-DROP DATABASE IF EXISTS friendfinder_db;
+DROP DATABASE IF EXISTS y0fr833g2h1g1pcn;   -- Using the Heroku given name
 
 -- Created the DB "friendfiender_db" (only works on local connections)
-CREATE DATABASE friendfinder_db;
-USE friendfinder_db;
+CREATE DATABASE y0fr833g2h1g1pcn;
+USE y0fr833g2h1g1pcn;
 
 -- Created the table "friends" 
 CREATE TABLE friends
 (
-  id int AUTO_INCREMENT,
+  id int AUTO_INCREMENT NOT NULL,
   name varchar (30) NOT NULL,
   photo varchar(150) NOT NULL,
   q1 int NOT NULL,
