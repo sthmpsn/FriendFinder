@@ -70,13 +70,12 @@ module.exports = function(app) {
         connection.query("INSERT INTO friends SET ?", newFriend, (err, res) => {
             if (err) throw err;
             console.log("Successfully inserted new friend " +newFriend.name);
-            getFriends();  //How to get this to execute after SQL is inserted to Table???
+            getFriends();
             bff = findBff(newFriend);
             console.log("BFF Name : " +bff.name);
+
         });
-
-        res.json(newFriend);
-
+            res.json(newFriend);
     });
 
 }
