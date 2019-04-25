@@ -12,6 +12,6 @@ HW - 11 - Friend Finder
 * jQuery
 * Heroku + JawsDB (for deploying MySQL on Heroku)
 
-# Features
+# Instructions
 * View all the the user object in the Database via the "API Friends List" Link
 * Click the "Go to Survey" button to take a Survey the finds your BFF in the Friends List and then adds you to the Database for future compatibility matching
