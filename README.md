@@ -1,5 +1,5 @@
 # FriendFinder
-HW - 11 - Friend Finder
+Friend Finder - Compatibility friend finder
 
 ![FriendFinder](https://github.com/sthmpsn/sthmpsn.github.io/blob/master/assets/images/projects/proj-friend-finder.jpg)
 
